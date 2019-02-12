@@ -10,16 +10,7 @@ items:
             isHidden: '0'
             cssClass: ''
     -
-        title: 'Privacy Policy'
-        type: cms-page
-        code: ''
-        reference: static/privacy-policy
-        viewBag:
-            isExternal: '0'
-            isHidden: '0'
-            cssClass: ''
-    -
-        title: 'Home'
+        title: 'Politik'
         type: cms-page
         code: ''
         reference: home
@@ -28,7 +19,7 @@ items:
             isHidden: '0'
             cssClass: ''
     -
-        title: 'Home'
+        title: 'Agama'
         type: cms-page
         code: ''
         reference: home
@@ -37,7 +28,7 @@ items:
             isHidden: '0'
             cssClass: ''
     -
-        title: 'Home'
+        title: 'Kesehatan'
         type: cms-page
         code: ''
         reference: home
@@ -46,7 +37,25 @@ items:
             isHidden: '0'
             cssClass: ''
     -
-        title: 'Home'
+        title: 'Bencana Alam'
+        type: cms-page
+        code: ''
+        reference: home
+        viewBag:
+            isExternal: '0'
+            isHidden: '0'
+            cssClass: ''
+    -
+        title: 'Edukasi'
+        type: cms-page
+        code: ''
+        reference: home
+        viewBag:
+            isExternal: '0'
+            isHidden: '0'
+            cssClass: ''
+    -
+        title: 'Teroris'
         type: cms-page
         code: ''
         reference: home

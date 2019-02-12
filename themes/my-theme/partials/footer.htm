@@ -1,16 +1,58 @@
 [viewBag]
 
 ==
-<footer>
-    <div class="container"></div>
+<footer  style="background:black; color:white;" >
 
-    <div class="footer-bottom">
-        <div class="container text-center">
-            <small>
-                Copyright {{ ''|date('Y') }}. All rights reserved. |
-                <a href="{{ 'static/terms-and-conditions'|page }}">Terms and Conditions</a> |
-                <a href="{{ 'static/privacy-policy'|page }}">Privacy Policy</a>
-            </small>
+
+  <div class="container" style="padding-top:30px;">
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class style= "width: 1; max-width: 200px;">
+          <h1>TURN BACK HOAX</h1>
         </div>
+          <p style="font-size:20px; max-width: 250px;"> Mafindo adalah organisasi non-profit independen yang non-partisan. Keberpihakan kami adalah pada kebenaran. <p>
+      </div>
+      <div class="col-md-2">
+        <h4>KATEGORI</h4>
+        <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/" class="klik">
+        <p>Politik</p>
+        </a>
+        <p>Agama</p>
+        <p>Kesehatan</p>
+        <p>Bencana Alam</p>
+        <p>Edukasi</p>
+        <p>Teroris</p>
+      </div>
+      <div class="col-md-2">
+        <h4>TIM KAMI</h4>
+        <p>Profile Tim</p>
+        <p>Kontak Kami</p>
+        <p>Tentang Kami</p>
+        <p>Forum</p>
+        <p>Informasi</p>
+      </div>
+      <div class="col-md-2">
+        <h4>SOSIAL MEDIA</h4>
+        <p>Facebook</p>
+        <p>Whatsapp</p>
+        <p>Email</p>
+      </div>
+      <div class="col-md-2">
+        <h4>LAYANAN PUBLIK</h4>
+        <p>Whatsapp Hoax Buster</p>
+        <p>Media</p>
+        <p>Sukarelawan</p>
+      </div>
+
     </div>
+
+      <small>
+        Copyright {{ ''|date('Y') }}. All rights reserved. |
+        <a href="{{ 'static/terms-and-conditions'|page }}">Terms and Conditions</a> |
+        <a href="{{ 'static/privacy-policy'|page }}">Privacy Policy</a>
+      </small>
+
+  </div>
+
 </footer>
