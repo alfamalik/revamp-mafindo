@@ -1,0 +1,10 @@
+name: Categories
+form: $/turnbackhoax/news/models/categories/fields.yaml
+modelClass: Turnbackhoax\News\Models\Categories
+defaultRedirect: turnbackhoax/news/categories
+create:
+    redirect: 'turnbackhoax/news/categories/update/:id'
+    redirectClose: turnbackhoax/news/categories
+update:
+    redirect: turnbackhoax/news/categories
+    redirectClose: turnbackhoax/news/categories

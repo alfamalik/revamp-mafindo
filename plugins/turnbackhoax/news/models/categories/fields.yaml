@@ -1,0 +1,12 @@
+fields:
+    categories_tittle:
+        label: Tittle
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: categories_tittle
+            type: slug
+        type: text

@@ -1,0 +1,4 @@
+title: News
+modelClass: Turnbackhoax\News\Models\News
+toolbar:
+    buttons: reorder_toolbar

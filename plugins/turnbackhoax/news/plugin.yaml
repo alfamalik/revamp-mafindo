@@ -1,0 +1,16 @@
+plugin:
+    name: 'turnbackhoax.news::lang.plugin.name'
+    description: 'turnbackhoax.news::lang.plugin.description'
+    author: turnbackhoax
+    icon: oc-icon-newspaper-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: News
+        url: turnbackhoax/news/news
+        icon: icon-newspaper-o
+        sideMenu:
+            side-menu-item:
+                label: Categories
+                url: turnbackhoax/news/categories
+                icon: icon-tags
