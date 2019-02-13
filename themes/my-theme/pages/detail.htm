@@ -7,19 +7,46 @@ is_hidden = 0
 slug = "{{ :slug }}"
 categoryPage = "blog/category"
 ==
-{% set post = blogPost.post %}
+<?php
+function onEnd()
+{
+    // Optional - set the page title to the post title
+    if (isset($this->post))
+        $this->page->title = $this->post->title;
+}
+?>
 
+{% if post %}
+    <h2>{{ post.title }}</h2>
 
+    {% set post = blogPost.post %}
 <p class="info">
-  <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-  <img src="{{ post.featured_images}}">
-  <p class="info">
-      Posted
-      {% if post.categories.count %} in {% endif %}
-      {% for category in post.categories %}
-          <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-      {% endfor %}
-      on {{ post.published_at|date('M d, Y') }}
-  </p>
-  <p class="excerpt">{{ post.content_html|raw }}</p>
+    Posted
+    {% if post.categories.count %} in
+        {% for category in post.categories %}
+            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    {% endif %}
+    on {{ post.published_at|date('M d, Y') }}
 </p>
+<div class="content">{{ post.content_html|raw }}</div>
+
+{% if post.featured_images.count %}
+    <div class="featured-images text-center">
+        {% for image in post.featured_images %}
+            <p>
+                <img
+                    data-src="{{ image.filename }}"
+                    src="{{ image.path }}"
+                    alt="{{ image.description }}"
+                    style="max-width: 30rem" >
+            </p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+
+{% else %}
+    <h2>Post not found</h2>
+{% endif %}

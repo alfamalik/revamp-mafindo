@@ -13,41 +13,48 @@ postPage = "detail"
 ==
 {% set posts = blogPosts.posts %}
 
-<ul class="post-list">
-    {% for post in posts %}
-        <li>
-            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-
-            <p class="info">
-                Posted
-                {% if post.categories.count %} in {% endif %}
-                {% for category in post.categories %}
-                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-                {% endfor %}
-                on {{ post.published_at|date('M d, Y') }}
-            </p>
-
-            <p class="excerpt">{{ post.excerpt|raw }}</p>
-        </li>
-    {% else %}
-        <li class="no-data">{{ blogPosts.noPostsMessage }}</li>
-    {% endfor %}
-</ul>
-
-{% if posts.lastPage > 1 %}
-    <ul class="pagination">
-        {% if posts.currentPage > 1 %}
-            <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
-        {% endif %}
-
-        {% for page in 1..posts.lastPage %}
-            <li class="{{ posts.currentPage == page ? 'active' : null }}">
-                <a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
-            </li>
-        {% endfor %}
-
-        {% if posts.lastPage > posts.currentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
-        {% endif %}
-    </ul>
-{% endif %}
+<div class="content-center">
+  <div class="container"style="margin-top: 100px; padding-bottom : 50px;">
+    <div class="row">
+	    <div class="col-sm-12 col-md-6 col-lg-6  py-0 pl-3 pr-1 featcard">
+        <div class="card bg-dark text-white" style="max-width: 32rem;">
+          <img class="card-img img-fluid" src="{{posts[0].featured_images.first.getPath()}}" alt="" style="height: 27rem;">
+		       <div class="card-img-overlay d-flex linkfeat">
+            <a href="{{ posts[0].url }}" class="align-self-end">
+              <span class="badge badge-primary">{% for i in posts[0].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
+              <h4 class="card-title">{{ posts[0].title }}</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 py-0 px-1 d-none d-lg-block">
+        <div class="row">
+          <div class="col-6 pb-2 mg-1	">
+            <div class="card bg-dark text-white">
+              <img class="card-img img-fluid" src="{{posts[1].featured_images.first.getPath()}}" alt="">
+              <div class="card-img-overlay d-flex">
+                <a href="{{ posts[1].url }}" class="align-self-end">
+                  <span class="badge badge-primary">{% for i in posts[1].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
+                  <p class="card-title" style="font-size: 15px;">{{ posts[1].title }}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 pb-2 mg-3	">
+            <div class="card bg-dark text-white">
+              <img class="card-img img-fluid" src="{{posts[2].featured_images.first.getPath()}}" alt="">
+              <div class="card-img-overlay d-flex">
+                <a href="{{ posts[2].url }}" class="align-self-end">
+                  <span class="badge badge-primary">{% for i in posts[2].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
+                  <p class="card-title" style="font-size: 15px;">{{ posts[2].title }}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
