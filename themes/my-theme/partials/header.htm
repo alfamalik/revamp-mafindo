@@ -4,7 +4,7 @@
 code = "main-menu"
 
 ==
-<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
     <div class="container">
       <img src="{{ 'assets/images/logotbh.png'|theme}}" style="width:70px; height:70px;">
         <a class="navbar-toggler" href="#" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@ code = "main-menu"
           <ul class="navbar-nav mr-auto" style="margin-left: 50px;">
                 {% for item in mainMenu.menuItems if not item.viewBag.isHidden %}
                 <li class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.viewBag.cssClass }}">
-                    <a class="nav-link" href="{{ item.url ?: '#' }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
+                    <a class="nav-link" href="{{ item.url ?: '#' }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} >
                         {{ item.title }}
                         {% if item.isActive %}
                         <span class="sr-only">(current)</span>
