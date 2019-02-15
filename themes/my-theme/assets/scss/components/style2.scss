@@ -1,12 +1,22 @@
-.klik{
+.list-menu {
+	a {
+		color: white;
 
-	&:active {
-		color: yellow;
+		&:hover {
+			color: yellow;
+		}
 	}
 }
 
+
+// a.klik{
+//
+// 	&:hover {
+// 		color: yellow;
+// 	}
+// }
+
 body {
-  color: #5a5a5a;
   font-family: 'Open Sans',Arial,sans-serif;
   font-size: 15px;
 }
@@ -79,7 +89,7 @@ header{float: left; width:100%}
 .banner-sec .news-block:last-child{margin-bottom: 0px}
 .banner-sec .news-des {margin-bottom: 5px;}
 .banner-sec .title-large{margin: 18px 0 0}
-.banner-sec .time{margin-top: 0px; font-size: 13px;}
+.banner -sec .time{margin-top: 0px; font-size: 13px;}
 .banner-sec .carousel-control.left, .banner-sec .carousel-control.right{background: none;}
 .banner-sec .card{margin-bottom:20px;}
 
@@ -99,3 +109,23 @@ header{float: left; width:100%}
 .action-sec{width:100%; float:left; background:#222}
 .action-box{float:left; width:100%; text-align:center;}
 .action-box h2{color:#fff; font-size:20px;}
+
+div.ellipsis{
+    width: 200px;
+    overflow: hidden;
+    text-overflow: clip;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+div.ellipsiss{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: clip;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

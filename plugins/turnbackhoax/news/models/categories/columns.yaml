@@ -1,0 +1,4 @@
+columns:
+    categories_tittle:
+        label: Tittle
+        type: text

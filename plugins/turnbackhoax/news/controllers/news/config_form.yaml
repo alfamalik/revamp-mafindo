@@ -1,0 +1,10 @@
+name: News
+form: $/turnbackhoax/news/models/news/fields.yaml
+modelClass: Turnbackhoax\News\Models\News
+defaultRedirect: turnbackhoax/news/news
+create:
+    redirect: 'turnbackhoax/news/news/update/:id'
+    redirectClose: turnbackhoax/news/news
+update:
+    redirect: turnbackhoax/news/news
+    redirectClose: turnbackhoax/news/news

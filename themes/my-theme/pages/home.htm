@@ -3,212 +3,281 @@ url = "/"
 layout = "default"
 is_hidden = 0
 
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = "detail"
 ==
-<div class="banner-sec">
-        <div class="container">
+<div class="banner-sec" style="padding-top:4rem">
+  <div class="container">
     <div class="row">
-      <div class="col-md-6 top-slider">
-                          <div class="news-block">
-                      <div class="news-media"><img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics1.jpg" alt=""></div>
-                      <div class="news-title">
-                              <h2 class=" title-large"><a href="#">Ray madison may struggle to get best from Paul in a 4-2-3-1 formation</a></h2>
-                            </div>
-                      <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
-                      <div class="time-text"><strong>2h ago</strong></div>
-                      <div></div>
-                    </div>
-
-
+      <div class="col-md-5">
+        <div class="card" style="">
+          <div class="news-media">
+            <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics1.jpg" alt="">
+          </div>
+          <div class="card-img-overlay">
+            <span class="badge badge-pill badge-danger">News</span>
+          </div>
+          <div class="card-body">
+            <div class="ellipsiss">
+              <div class="news-title">
+                <h2 class=" title-large"><a href="#">Ray madison may struggle to get best from Paul in a 4-2-3-1 formation blablablablabalblablabalblablablablablablbalablablablablablablablablbalbalbalbalbalbalbalbalbalbalbal</a></h2>
+              </div>
+            </div>
+            <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
+            <div class="time-text">
+              <strong>10h ago</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
+          <div class="card-img-overlay">
+            <span class="badge badge-pill badge-danger">News</span>
+          </div>
+          <div class="card-body">
+            <div class="ellipsis">
+              <div class="news-title">
+                <h2 class=" title-small"><a href="#">Syria war: Why the battle for Aleppo matters </a></h2>
+              </div>
+            </div>
+            <small class="text-time">3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/travel.jpg" alt="">
+          <div class="card-img-overlay">
+            <span class="badge badge-pill badge-danger">Politics</span>
+          </div>
+          <div class="card-body">
+            <div class="news-title">
+              <h2 class=" title-small"><a href="#">Key Republicans sign letter warning against</a></h2>
+            </div>
+            <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+          </div>
+        </div>
+      </div>
+      <aside class="col-md-4">
+        <div class="card">
+          <a  href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/" class="pl-4 pt-2"><h3>Latest News</h3></a>
+          <!-- Tab panes -->
+          <div class="tab-content sidebar-tabing" id="nav-tabContent">
+            <div class="media px-2">
+              <a href="#">
+                <img class="d-flex mr-3 rounded-circle" src="http://grafreez.com/wp-content/temp_demos/river/img/sport2.jpg" alt="Generic placeholder image" style="height:80px; width:80px;">
+              </a>
+              <div class="media-body">
+                <div class="news-title">
+                  <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
                 </div>
-
-            <div class="col-md-3">
-        <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
-                <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">News</span> </div>
-                <div class="card-body">
-            <div class="news-title">
-                    <h2 class=" title-small"><a href="#">Syria war: Why the battle for Aleppo matters</a></h2>
-                  </div>
-            <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-          </div>
+                <div class="news-auther">
+                  <span class="time">1h ago</span>
+                </div>
               </div>
-        <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/travel.jpg" alt="">
-                <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Politics</span> </div>
-                <div class="card-body">
-            <div class="news-title">
-                    <h2 class=" title-small"><a href="#">Key Republicans sign letter warning against</a></h2>
-                  </div>
-            <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-          </div>
+            </div>
+            <div class="media px-2">
+              <a href="#">
+                <img class="d-flex mr-3 rounded-circle" src="http://grafreez.com/wp-content/temp_demos/river/img/lifestyle.jpg" alt="Generic placeholder image" style="height:80px; width:80px;">
+              </a>
+              <div class="media-body">
+                <div class="news-title">
+                  <h2 class="title-small"><a href="#">Obamacare Appears to Be Making People Healthier</a></h2>
+                </div>
+                <div class="news-auther">
+                  <span class="time">1h ago</span>
+                </div>
               </div>
-      </div>
-            <div class="col-md-3">
-        <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/business1.jpg" alt="">
-                <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Travel</span> </div>
-                <div class="card-body">
-            <div class="news-title">
-                    <h2 class=" title-small"><a href="#">Obamacare Appears to Be Making People Healthier</a></h2>
-                  </div>
-            <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-          </div>
+            </div>
+            <div class="media px-2">
+              <a href="#">
+                <img class="d-flex mr-3 rounded-circle" src="http://grafreez.com/wp-content/temp_demos/river/img/food1.jpg" alt="Generic placeholder image" style="height:80px; width:80px;">
+              </a>
+              <div class="media-body">
+                <div class="news-title">
+                  <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
+                </div>
+                <div class="news-auther">
+                  <span class="time">1h ago</span>
+                </div>
               </div>
-        <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/food.jpg" alt="">
-                <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">News</span> </div>
-                <div class="card-body">
-            <div class="news-title">
-                    <h2 class=" title-small"><a href="#">‘S.N.L.’ to Lose Two Longtime Cast Members</a></h2>
-                  </div>
-            <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-          </div>
+            </div>
+            <div class="media px-2">
+              <a href="#">
+                <img class="d-flex mr-3 rounded-circle" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="Generic placeholder image" style="height:80px; width:80px;">
+              </a>
+              <div class="media-body">
+                <div class="news-title">
+                  <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
+                </div>
+                <div class="news-auther">
+                  <span class="time">1h ago</span>
+                </div>
               </div>
-      </div>
-
+            </div>
+            <div class="media px-2 pb-4">
+              <a href="#">
+                <img class="d-flex mr-3 rounded-circle" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="Generic placeholder image" style="height:80px; width:80px;">
+              </a>
+              <div class="media-body">
+                <div class="news-title">
+                  <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
+                </div>
+                <div class="news-auther">
+                  <span class="time">1h ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
   </div>
-
-
-<div class="section-01">
-        <div class="container">
-    <div class="row">
-            <div class="col-lg-8 col-md-12">
-        <h3 class="heading-large">Politics</h3>
-        <div class="">
-                <div class="col-lg-6 card">
-            <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg" alt="">
-                    <div class="card-body">
-                <div class="news-title"><a href="#">
-                  <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
-                  </a></div>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-              </div>
+  <div class="section-01" style="padding-top:2rem">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h3 class="heading-large">Politics</h3>
+          <div class="">
+            <div class="col-lg-4 card">
+              <div class="card">
+                <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg" alt="">
+                <div class="card-body">
+                  <div class="news-title">
+                    <a href="#">
+                      <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
+                    </a>
                   </div>
-          </div>
-                <div class="col-lg-6 card">
-            <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
-                    <div class="card-body">
-                <div class="news-title"><a href="#">
-                  <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
-                  </a></div>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                </div>
               </div>
+            </div>
+            <div class="col-lg-4 card">
+              <div class="card">
+                <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
+                <div class="card-body">
+                  <div class="news-title">
+                    <a href="#">
+                      <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
+                    </a>
                   </div>
-          </div>
-                <div class="col-lg-6 card">
-            <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="">
-                    <div class="card-body">
-                <div class="news-title"><a href="#">
-                  <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
-                  </a></div>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                </div>
               </div>
+            </div>
+            <div class="col-lg-4 card">
+              <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="">
+                <div class="card-body">
+                  <div class="news-title">
+                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
                   </div>
-          </div>
-                <div class="col-lg-6 card">
-            <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/travel1.jpg" alt="">
-                    <div class="card-body">
-                <div class="news-title"><a href="#">
-                  <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
-                  </a></div>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                </div>
               </div>
-                  </div>
+            </div>
           </div>
-              </div>
+        </div>
       </div>
-            <aside class="col-lg-4 side-bar col-md-12">
-        <ul class="nav nav-tabs" role="tablist" id="myTab">
-                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Latest</a> </li>
-                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Top</a> </li>
-                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Featured</a> </li>
-              </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content sidebar-tabing" id="nav-tabContent">
-                <div class="tab-pane active" id="home" role="tabpanel">
-                    <div class="media"> <a href="#"> <img class="d-flex mr-3" src="http://grafreez.com/wp-content/temp_demos/river/img/sport2.jpg" alt="Generic placeholder image"></a>
-                    <div class="media-body">
-                        <div class="news-title">
-                            <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
-                        </div>
-                        <div class="news-auther"><span class="time">1h ago</span></div>
-                    </div>
-                  </div>
-            <div class="media"> <a href="#"> <img class="d-flex mr-3" src="http://grafreez.com/wp-content/temp_demos/river/img/lifestyle.jpg" alt="Generic placeholder image"></a>
-                    <div class="media-body">
-                <div class="news-title">
-                        <h2 class="title-small"><a href="#">Obamacare Appears to Be Making People Healthier</a></h2>
-                      </div>
-                <div class="news-auther"><span class="time">1h ago</span></div>
-              </div>
-                  </div>
-            <div class="media"> <a href="#"> <img class="d-flex mr-3" src="http://grafreez.com/wp-content/temp_demos/river/img/food1.jpg" alt="Generic placeholder image"></a>
-                    <div class="media-body">
-                <div class="news-title">
-                        <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
-                      </div>
-                <div class="news-auther"><span class="time">1h ago</span></div>
-              </div>
-                  </div>
-          </div>
-                <div class="tab-pane" id="profile" role="tabpanel">
-            <div class="media"> <a href="#"> <img class="d-flex mr-3" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="Generic placeholder image"></a>
-                    <div class="media-body">
-                <div class="news-title">
-                        <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
-                      </div>
-                <div class="news-auther"><span class="time">1h ago</span></div>
-              </div>
-                  </div>
-            <div class="media"> <a href="#"> <img class="d-flex mr-3" src="http://grafreez.com/wp-content/temp_demos/river/img/auto.jpg" alt="Generic placeholder image"></a>
-                    <div class="media-body">
-                <div class="news-title">
-                        <h2 class="title-small"><a href="#">‘S.N.L.’ to Lose Two Longtime Cast Members</a></h2>
-                      </div>
-                <div class="news-auther"><span class="time">1h ago</span></div>
-              </div>
-                  </div>
-            <div class="media"> <a href="#"> <img class="d-flex mr-3" src="http://grafreez.com/wp-content/temp_demos/river/img/business1.jpg" alt="Generic placeholder image"></a>
-                    <div class="media-body">
-                <div class="news-title">
-                        <h2 class="title-small"><a href="#">Obamacare Appears to Be Making People Healthier</a></h2>
-                      </div>
-                <div class="news-auther"><span class="time">1h ago</span></div>
-              </div>
-                  </div>
-          </div>
-                <div class="tab-pane" id="messages" role="tabpanel">
-            <div class="media"> <a href="#"> <img class="d-flex mr-3" src="http://grafreez.com/wp-content/temp_demos/river/img/food.jpg" alt="Generic placeholder image"></a>
-                    <div class="media-body">
-                <div class="news-title">
-                        <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
-                      </div>
-                <div class="news-auther"><span class="time">1h ago</span></div>
-              </div>
-                  </div>
-            <div class="media"> <a href="#"> <img class="d-flex mr-3" src="http://grafreez.com/wp-content/temp_demos/river/img/business.jpg" alt="Generic placeholder image"></a>
-                    <div class="media-body">
-                <div class="news-title">
-                        <h2 class="title-small"><a href="#">‘S.N.L.’ to Lose Two Longtime Cast Members</a></h2>
-                      </div>
-                <div class="news-auther"><span class="time">1h ago</span></div>
-              </div>
-                  </div>
-            <div class="media"> <a href="#"> <img class="d-flex mr-3" src="http://grafreez.com/wp-content/temp_demos/river/img/sport1.jpg" alt="Generic placeholder image"></a>
-                    <div class="media-body">
-                <div class="news-title">
-                        <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
-                      </div>
-                <div class="news-auther"><span class="time">1h ago</span></div>
-              </div>
-                  </div>
-          </div>
-              </div>
-
-      </aside>
-          </div>
+    </div>
   </div>
-</div>
+  <div class="section-01" style="padding-top:2rem">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h3 class="heading-large">Politics</h3>
+          <div class="">
+            <div class="col-lg-4 card">
+              <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg" alt="">
+                <div class="card-body">
+                  <div class="news-title">
+                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
+                    </a>
+                  </div>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 card">
+              <div class="card">
+                <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
+                <div class="card-body">
+                  <div class="news-title">
+                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
+                  </div>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 card">
+              <div class="card">
+                <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="">
+                <div class="card-body">
+                  <div class="news-title">
+                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
+                  </div>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-01" style="padding-top:2rem">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h3 class="heading-large">Politics</h3>
+          <div class="">
+            <div class="col-lg-4 card">
+              <div class="card">
+                <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg" alt="">
+                <div class="card-body">
+                  <div class="news-title">
+                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
+                  </div>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 card">
+              <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
+                <div class="card-body">
+                  <div class="news-title">
+                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
+                  </div>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 card">
+              <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="">
+                <div class="card-body">
+                  <div class="news-title">
+                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
+                  </div>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
