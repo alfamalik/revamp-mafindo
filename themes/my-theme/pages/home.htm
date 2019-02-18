@@ -5,279 +5,136 @@ is_hidden = 0
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = 10
+postsPerPage = 5
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = 404
 postPage = "detail"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/category"
 ==
+{% set posts = blogPosts.posts %}
+
+{% set categories = blogCategories.categories %}
+
+
 <div class="banner-sec position-relative" style="padding-top:4rem; overflow-x:hidden;">
   <div class="container">
     <div class="row">
       <div class="col-md-5">
-        <div class="card">
+        <div class="card" style="height:560px;">
           <div class="news-media">
-            <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics1.jpg" alt="">
+            <img class="img-fluid" style="width:500px; height:350px;" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg" alt="">
           </div>
           <div class="card-img-overlay">
-            <span class="badge badge-pill badge-danger">News</span>
+            <span class="badge badge-pill badge-danger">{% for i in posts[0].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
           </div>
           <div class="card-body">
-            <div class="ellipsiss">
+            <div class="ellipsis">
               <div class="news-title">
-                <h2 class=" title-large"><a href="#">Ray madison may struggle to get best from Paul in a 4-2-3-1 formation blablablablabalblablabalblablablablablablbalablablablablablablablablbalbalbalbalbalbalbalbalbalbalbal</a></h2>
+                <h2 class=" title-large"><a href="{{posts[0].url}}">{{posts[0].title}}</a></h2>
               </div>
             </div>
-            <div class="news-des">Condimentum ultrices mi est a arcu at cum a elementum per cum turpis dui vulputate vestibulum in vehicula montes vel. Mauris nam suspendisse consectetur mus...</div>
+            <div class="ellipsis">
+            <div class="news-des">{{posts[0].excerpt|raw}}</div>
+          </div>
             <div class="time-text">
-              <strong>10h ago</strong>
+              <strong>{{ posts[0].published_at|date('M d, Y') }}</strong>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card">
-          <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
+        <div class="card" style="height:270px;">
+          <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg" alt="">
           <div class="card-img-overlay">
-            <span class="badge badge-pill badge-danger">News</span>
+            <span class="badge badge-pill badge-danger">{% for i in posts[1].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
           </div>
           <div class="card-body">
             <div class="ellipsis">
               <div class="news-title">
-                <h2 class=" title-small"><a href="#">Syria war: Why the battle for Aleppo matters </a></h2>
+                <h2 class=" title-small"><a href="{{posts[1].url}}">{{posts[1].title}}</a></h2>
               </div>
             </div>
-            <small class="text-time">3 mins ago</small>
+            <small class="text-time">{{ posts[1].published_at|date('M d, Y') }}</small>
           </div>
         </div>
-        <div class="card">
-          <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/travel.jpg" alt="">
+        <div class="card" style="height:270px;">
+          <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg" alt="">
           <div class="card-img-overlay">
-            <span class="badge badge-pill badge-danger">Politics</span>
+            <span class="badge badge-pill badge-danger">{% for i in posts[2].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
           </div>
           <div class="card-body">
+            <div class="ellipsis">
             <div class="news-title">
-              <h2 class=" title-small"><a href="#">Key Republicans sign letter warning against</a></h2>
+              <h2 class=" title-small"><a href="{{posts[2].url}}">{{posts[2].title}}</a></h2>
             </div>
-            <small class="text-time">3 mins ago</small>
+            </div>
+            <p class="card-text"><small class="text-time">{{ posts[2].published_at|date('M d, Y') }}</small></p>
           </div>
         </div>
       </div>
       <aside class="col-md-4">
-        <div class="card">
-          <a  href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/" class="pl-4 pt-2"><h3>Latest News</h3></a>
+        <div class="card" style="height:560px;">
+          <a  href="#" class="pl-4 pt-2"><h3>Latest News</h3></a>
           <!-- Tab panes -->
           <div class="tab-content sidebar-tabing" id="nav-tabContent">
+            {% for post in posts.take(5) %}
             <div class="media px-2">
-              <a href="#">
-                <img class="d-flex mr-3 rounded-circle" src="http://grafreez.com/wp-content/temp_demos/river/img/sport2.jpg" alt="Generic placeholder image" style="height:80px; width:80px;">
+              <a href="{{post.url}}">
+                <img class="d-flex mr-3 rounded-circle" src="{{post.featured_images.first.getPath()}}"  style="height:80px; width:80px;">
               </a>
               <div class="media-body">
+                <div class="ellipsis">
                 <div class="news-title">
-                  <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
+                  <h2 class="title-small"><a href="{{post.url}}">{{post.title}}</a></h2>
                 </div>
+                  </div>
                 <div class="news-auther">
-                  <span class="time">1h ago</span>
+                  <span class="time">{{ post.published_at|date('M d, Y') }}</span>
                 </div>
               </div>
             </div>
-            <div class="media px-2">
-              <a href="#">
-                <img class="d-flex mr-3 rounded-circle" src="http://grafreez.com/wp-content/temp_demos/river/img/lifestyle.jpg" alt="Generic placeholder image" style="height:80px; width:80px;">
-              </a>
-              <div class="media-body">
-                <div class="news-title">
-                  <h2 class="title-small"><a href="#">Obamacare Appears to Be Making People Healthier</a></h2>
-                </div>
-                <div class="news-auther">
-                  <span class="time">1h ago</span>
-                </div>
-              </div>
-            </div>
-            <div class="media px-2">
-              <a href="#">
-                <img class="d-flex mr-3 rounded-circle" src="http://grafreez.com/wp-content/temp_demos/river/img/food1.jpg" alt="Generic placeholder image" style="height:80px; width:80px;">
-              </a>
-              <div class="media-body">
-                <div class="news-title">
-                  <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
-                </div>
-                <div class="news-auther">
-                  <span class="time">1h ago</span>
-                </div>
-              </div>
-            </div>
-            <div class="media px-2">
-              <a href="#">
-                <img class="d-flex mr-3 rounded-circle" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="Generic placeholder image" style="height:80px; width:80px;">
-              </a>
-              <div class="media-body">
-                <div class="news-title">
-                  <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
-                </div>
-                <div class="news-auther">
-                  <span class="time">1h ago</span>
-                </div>
-              </div>
-            </div>
-            <div class="media px-2 pb-4">
-              <a href="#">
-                <img class="d-flex mr-3 rounded-circle" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="Generic placeholder image" style="height:80px; width:80px;">
-              </a>
-              <div class="media-body">
-                <div class="news-title">
-                  <h2 class="title-small"><a href="#">Key Republicans sign letter warning against candidate</a></h2>
-                </div>
-                <div class="news-auther">
-                  <span class="time">1h ago</span>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </aside>
     </div>
   </div>
+  {% for category in categories %}
   <div class="section-01" style="padding-top:2rem">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12">
-          <h3 class="heading-large">Politics</h3>
+          <h3 class="heading-large">{{category.name}}</h3>
+          {% for post in category.posts.take(3) %}
           <div class="">
             <div class="col-lg-4 card">
-              <div class="card">
-                <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg" alt="">
+              <div class="card" style=" height:400px;">
+                <img class="img-fluid" style="height:250px" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg"  >
                 <div class="card-body">
+                    <div class="ellipsis">
                   <div class="news-title">
-                    <a href="#">
-                      <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
+                    <a href="{{ 'detail'|page({slug: post.slug})}}">
+                      <h2 class=" title-small">{{post.title}}</h2>
                     </a>
                   </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 card">
-              <div class="card">
-                <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
-                <div class="card-body">
-                  <div class="news-title">
-                    <a href="#">
-                      <h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
-                    </a>
+                      </div>
+                      <div class="ellipsis">
+                  <p class="card-text">{{ post.excerpt |raw }}</p>
                   </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 card">
-              <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="">
-                <div class="card-body">
-                  <div class="news-title">
-                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
-                  </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                  <p class="card-text"><small class="text-time">{{ post.published_at|date('M d,Y')}}</small></p>
                 </div>
               </div>
             </div>
           </div>
+          {% endfor %}
         </div>
       </div>
     </div>
   </div>
-  <div class="section-01" style="padding-top:2rem">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12">
-          <h3 class="heading-large">Politics</h3>
-          <div class="">
-            <div class="col-lg-4 card">
-              <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg" alt="">
-                <div class="card-body">
-                  <div class="news-title">
-                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2>
-                    </a>
-                  </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 card">
-              <div class="card">
-                <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
-                <div class="card-body">
-                  <div class="news-title">
-                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
-                  </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 card">
-              <div class="card">
-                <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="">
-                <div class="card-body">
-                  <div class="news-title">
-                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
-                  </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section-01" style="padding-top:2rem">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12">
-          <h3 class="heading-large">Politics</h3>
-          <div class="">
-            <div class="col-lg-4 card">
-              <div class="card">
-                <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/war.jpg" alt="">
-                <div class="card-body">
-                  <div class="news-title">
-                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
-                  </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 card">
-              <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
-                <div class="card-body">
-                  <div class="news-title">
-                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
-                  </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 card">
-              <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/movie.jpg" alt="">
-                <div class="card-body">
-                  <div class="news-title">
-                    <a href="#"><h2 class=" title-small">Minorities Suffer From Unequal Pain Treatment</h2></a>
-                  </div>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 </div>
