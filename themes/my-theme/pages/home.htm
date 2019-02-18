@@ -102,7 +102,9 @@ categoryPage = "blog/category"
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12">
-          <h3 class="heading-large">{{category.name}}</h3>
+          <a href="{{ 'kategori'|page({slug: category.slug})}}">
+            <h3 class="heading-large">{{category.name}}</h3>
+          </a>
           {% for post in category.posts.take(3) %}
           <div class="">
             <div class="col-lg-4 card">
