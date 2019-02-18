@@ -6,8 +6,27 @@ is_hidden = 0
 [blogPost]
 slug = "{{ :slug }}"
 categoryPage = "blog/category"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = 404
 ==
 {% set post = blogPost.post %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<?php
+function onEnd()
+{
+    // Optional - set the page title to the post title
+    if (isset($this->post))
+        $this->page->title = $this->post->title;
+}
+?>
+
+
 {% if post %}
     <h2>{{ post.title }}</h2>
 <p class="info">
@@ -19,6 +38,7 @@ categoryPage = "blog/category"
     {% endif %}
     on {{ post.published_at|date('M d, Y') }}
 </p>
+
 <div class="content">{{ post.content_html|raw }}</div>
 
 {% if post.featured_images.count %}
@@ -34,9 +54,87 @@ categoryPage = "blog/category"
         {% endfor %}
     </div>
 {% endif %}
-
-
-
 {% else %}
     <h2>Post not found</h2>
-{% endif %}
+{% endif %} -->
+
+<div class="banner-sec position-relative" style="padding-top:4rem;">
+  <div class="container">
+	  <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="news-title">
+              <h2>{{ post.title }}</h2>
+            </div>
+            <div class="news-cats">
+              <ul class="list-unstyled list-inline mb-1">
+                <li class="list-inline-item">
+                  <i class="fa fa-folder-o text-danger"></i>
+                  <a href="#"><small></small>{{ post.published_at|date('M d, Y')}}</a>
+                </li>
+              </ul>
+            </div>
+            <hr>
+            <div class="image">
+              {% if post.featured_images.count %}
+              <div class="featured-images text-center">
+                {% for image in post.featured_images %}
+                <p>
+                  <img
+                  data-src="{{ image.filename }}"
+                  src="{{ image.path }}"
+                  alt="{{ image.description }}"
+                  style="max-width: 30rem" >
+                </p>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+            <div class="news-content">
+              <p>{{post.content_html|raw}}</p>
+            </div>
+            <div class="news-author">
+              <div class="row">
+                <div class="col">
+                  <div class="auth-title">
+                    <ul class="list-unstyled list-inline">
+                      <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                      <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                      <li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-globe"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="col-md-4">
+        <div class="card" style="height:560px;">
+          <a  href="#" class="pl-4 pt-2"><h3>Latest News</h3></a>
+          <!-- Tab panes -->
+          <div class="tab-content sidebar-tabing" id="nav-tabContent">
+            {% for post in posts.take(5) %}
+            <div class="media px-2">
+              <a href="{{post.url}}">
+                <img class="d-flex mr-3 rounded-circle" src="{{post.featured_images.first.getPath()}}"  style="height:80px; width:80px;">
+              </a>
+              <div class="media-body">
+                <div class="ellipsis">
+                <div class="news-title">
+                  <h2 class="title-small"><a href="{{post.url}}">{{post.title}}</a></h2>
+                </div>
+                  </div>
+                <div class="news-auther">
+                  <span class="time">{{ post.published_at|date('M d, Y') }}</span>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </aside>
+    </div>
+	</div>
+</div>
