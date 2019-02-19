@@ -48,7 +48,7 @@ categoryPage = "blog/category"
       <div class="col-md-4">
         {% else %}
         <div class="card" style="height:340px;">
-          <img  class="img-fluid" src="{{headline.featured_images.first.getPath()}}" alt="">
+          <img  class="img-fluid"  style="height:230px;" src="{{headline.featured_images.first.getPath()}}" alt="">
           <div class="card-img-overlay">
             <span class="badge badge-pill badge-danger">{{category.name}}</span>
           </div>
@@ -75,15 +75,19 @@ categoryPage = "blog/category"
             {% if post.id in headlines.pluck('id') == false %}
             <div class="">
               <div class="col-lg-4 card">
-                <div class="card" style=" height:400px;">
+                <div class="card" style=" height:450px;">
                   <img class="img-fluid" style="height:250px;" src="{{post.featured_images.first.getPath()}}" alt="">
                   <div class="card-body">
+                    <div class="ellipsis">
                     <div class="news-title">
                       <a href="{{'detail'|page({slug: post.slug})}}">
                         <h2 class=" title-small">{{post.title}}</h2>
                       </a>
                     </div>
+                    </div>
+                    <div class="ellipsis">
                     <p class="card-text">{{post.excerpt}}</p>
+                  </div>
                     <p class="card-text"><small class="text-time">{{ post.published_at|date('M d,Y')}}</small></p>
                   </div>
                 </div>
