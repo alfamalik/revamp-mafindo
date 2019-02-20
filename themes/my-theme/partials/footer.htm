@@ -1,5 +1,9 @@
 [viewBag]
 
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = 404
 ==
 <div style="position: relative; background: yellow; color: black; display: flex; ">
     <div class="container">
@@ -26,12 +30,9 @@
           <h5>KATEGORI</h5>
         </div>
         <div class="list-menu" style= " margin-top: 30px;">
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/" ><p>Benar</p></a>
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/"><p>Salah</p></a>
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/"><p>hoax</p></a>
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/"><p>Berita</p></a>
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/" ><p>Klarifikasi</p></a>
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/"><p>Misinformasi</p></a>
+          {% for category in categories %}
+          <a href="{{'kategori'|page({slug: category.slug})}}" ><p>{{category.name}}</p></a>
+          {% endfor %}
         </div>
       </div>
 
@@ -42,9 +43,9 @@
       <div class="list-menu" style= " margin-top: 30px;">
           <a href="{{'profil-tim'|page}}"><p>Profile Tim</p></a>
           <a href="{{'kontak-kami'|page}}"><p>Kontak Kami</p></a>
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/"><p>Tentang Kami</p></a>
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/"><p>Forum</p></a>
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/"><p>Informasi</p></a>
+          <a href="#"><p>Tentang Kami</p></a>
+          <a href="#"><p>Forum</p></a>
+          <a href="#"><p>Informasi</p></a>
         </div>
       </div>
 
@@ -53,9 +54,9 @@
           <h5>SOSIAL MEDIA</h5>
         </div>
         <div class="list-menu" style= " margin-top: 30px;">
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/"><p>Facebook</p></a>
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/"><p>Whatsapp</p></a>
-          <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/"><p>Email</p></a>
+          <a href="#"><p>Facebook</p></a>
+          <a href="#"><p>Whatsapp</p></a>
+          <a href="#"><p>Email</p></a>
         </div>
       </div>
 
@@ -66,7 +67,7 @@
         <div class="list-menu">
         <a href="{{'media'|page}}"><p>Media</p></a>
         <a href="{{'sukarelawan'|page}}"><p>Sukarelawan</p></a>
-        <a href="https://turnbackhoax.id/2019/02/12/salah-sms-dukungan-buat-jokowi-di-pilpres-2019/"><p>Whatsapp Hoax Buster</p></a>
+        <a href="{{'whatsapp-hoax-buster'|page}}"><p>Whatsapp Hoax Buster</p></a>
       </div>
 
     </div>
@@ -97,9 +98,8 @@
         <small>
           <a href="{{ 'koreksi'|page }}">Koreksi</a>
         </small>
+        </div>
       </div>
     </div>
-      </div>
-
   </div>
 </footer>

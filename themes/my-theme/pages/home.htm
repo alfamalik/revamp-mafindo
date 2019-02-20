@@ -14,7 +14,7 @@ postPage = "detail"
 [blogCategories]
 slug = "{{ :slug }}"
 displayEmpty = 0
-categoryPage = "blog/category"
+categoryPage = 404
 ==
 {% set posts = blogPosts.posts %}
 
@@ -126,7 +126,7 @@ categoryPage = "blog/category"
                   </div>
                       </div>
                       <div class="ellipsis">
-                  <p class="card-text">{{ post.excerpt |raw }}</p>
+                  <p class="card-text">{{ post.excerpt}}</p>
                   </div>
                   <p class="card-text"><small class="text-time">{{ post.published_at|date('M d,Y')}}</small></p>
                 </div>
