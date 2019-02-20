@@ -5,7 +5,7 @@ is_hidden = 0
 
 [blogPost]
 slug = "{{ :slug }}"
-categoryPage = "blog/category"
+categoryPage = 404
 
 [blogPosts]
 pageNumber = "{{ :page }}"
@@ -13,7 +13,7 @@ postsPerPage = 5
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = 404
-postPage = 404
+postPage = "detail"
 ==
 {% set post = blogPost.post %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
