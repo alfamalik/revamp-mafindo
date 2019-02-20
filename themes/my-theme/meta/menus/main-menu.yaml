@@ -31,7 +31,7 @@ items:
         title: 'Hoax'
         type: cms-page
         code: ''
-        reference: home
+        reference: detail
         viewBag:
             isExternal: '0'
             isHidden: '0'
@@ -40,7 +40,7 @@ items:
         title: 'Berita'
         type: cms-page
         code: ''
-        reference: home
+        reference: kategori
         viewBag:
             isExternal: '0'
             isHidden: '0'
