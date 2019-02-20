@@ -1,7 +1,7 @@
 name: 'Main Menu'
 items:
     -
-        title: 'Home'
+        title: 'Beranda'
         type: cms-page
         code: ''
         reference: home
@@ -10,7 +10,7 @@ items:
             isHidden: '0'
             cssClass: ''
     -
-        title: 'Politik'
+        title: 'Benar'
         type: cms-page
         code: ''
         reference: home
@@ -19,7 +19,7 @@ items:
             isHidden: '0'
             cssClass: ''
     -
-        title: 'Agama'
+        title: 'Salah'
         type: cms-page
         code: ''
         reference: home
@@ -28,7 +28,7 @@ items:
             isHidden: '0'
             cssClass: ''
     -
-        title: 'Kesehatan'
+        title: 'Hoax'
         type: cms-page
         code: ''
         reference: home
@@ -37,7 +37,7 @@ items:
             isHidden: '0'
             cssClass: ''
     -
-        title: 'Bencana Alam'
+        title: 'Berita'
         type: cms-page
         code: ''
         reference: home
@@ -46,7 +46,7 @@ items:
             isHidden: '0'
             cssClass: ''
     -
-        title: 'Edukasi'
+        title: 'Klarifikasi'
         type: cms-page
         code: ''
         reference: home
@@ -55,7 +55,7 @@ items:
             isHidden: '0'
             cssClass: ''
     -
-        title: 'Teroris'
+        title: 'Misinformasi'
         type: cms-page
         code: ''
         reference: home
