@@ -48,8 +48,8 @@ categoryPage = "blog/category"
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card" style="height:270px;">
-          <img class="img-fluid" src="{{posts[1].featured_images.first.getPath()}}" alt="">
+        <div class="card">
+          <img class="img-fluid" src="{{posts[1].featured_images.first.getPath()}}" alt="" style="height:173px;">
           <div class="card-img-overlay">
             <span class="badge badge-pill badge-danger">{% for i in posts[1].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
           </div>
@@ -62,7 +62,7 @@ categoryPage = "blog/category"
             <small class="text-time">{{ posts[1].published_at|date('M d, Y') }}</small>
           </div>
         </div>
-        <div class="card" style="height:270px;">
+        <div class="card">
           <img class="img-fluid" src="{{posts[2].featured_images.first.getPath()}}" alt="">
           <div class="card-img-overlay">
             <span class="badge badge-pill badge-danger">{% for i in posts[2].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
@@ -116,7 +116,7 @@ categoryPage = "blog/category"
           <div class="">
             <div class="col-lg-4 card">
               <div class="card" style=" height:400px;">
-                <img class="img-fluid" style="height:250px" src="{{post.featured_images.first.getPath()}}"  >
+                <img class="img-fluid" style="height:200px" src="{{post.featured_images.first.getPath()}}"  >
                 <div class="card-body">
                     <div class="ellipsis">
                   <div class="news-title">
