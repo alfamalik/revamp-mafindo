@@ -13,7 +13,7 @@ code = "main-menu"
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto" style="margin-left: 50px;">
-                {% for item in mainMenu.menuItems if not item.viewBag.isHidden %}
+                {#{% for item in mainMenu.menuItems if not item.viewBag.isHidden %}
                 <li class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.viewBag.cssClass }}">
                     <a class="nav-link" href="{{ item.url ?: '#' }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} >
                         {{ item.title }}
@@ -22,7 +22,26 @@ code = "main-menu"
                         {% endif %}
                     </a>
                 </li>
+                {% endfor %}#}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ 'home'|page }}">
+                        Home
+                        {% if item.isActive %}
+                        <span class="sr-only">(current)</span>
+                        {% endif %}
+                    </a>
+                </li>
+                {% for item in categories %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ 'kategori'|page({slug: item.slug}) }}">
+                        {{ item.name }}
+                        {% if item.isActive %}
+                        <span class="sr-only">(current)</span>
+                        {% endif %}
+                    </a>
+                </li>
                 {% endfor %}
+
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
