@@ -16,9 +16,7 @@ body {
 h1,h2,h3,h4,h5{
     font-family: 'Montserrat', sans-serif;
 }
-a, a:hover, .btn{outline:none!important;}
-.btn-search{background: #FD3A13; border-color: #FD3A13; color: #fff; padding: 7px 10px}
-.btn-search:hover{background: #ca1b1b; border-color: #ca1b1b}
+
 
 section{padding: 30px 0;  width: 100%}
 .card{ float :left; width:100%}
@@ -42,10 +40,9 @@ header{ width:100%}
 .sidebar-tabing .media{margin-top: 20px}
 .sidebar-tabing img{width: 120px;height: 100px;}
 .sidebar-tabing .title-small {line-height: 23px; margin-top: 5px; font-size: 18px}
-#search { margin-top: 9px; width: 250px;}
-.search {padding: 5px 0; width: 230px; height: 30px; position: relative; left: 10px;line-height: 22px;}
-.search input {background: #d0d0d0; border: medium none; border-radius: 3px 0 0 3px; height: 36px; line-height: 18px; margin-left: 210px; padding: 0 9px; position: absolute; top: -3px; width: 0; -webkit-transition: all 0.7s ease-in-out; -moz-transition: all 0.7s ease-in-out;
--o-transition: all 0.7s ease-in-out; transition: all 0.7s ease-in-out;}
+
+
+
 .banner-sec{ width:100%;}
 .banner-sec .news-block{margin-bottom: 20px}
 .banner-sec .news-block:last-child{margin-bottom: 0px}
@@ -84,11 +81,11 @@ img{width:100%;}
 	.contact-info h2{
 		margin-bottom: 3%;
 	}
-	.contact-form label{
-		font-weight:600;
-	}
+	// .contact-form label{
+	// 	font-weight:600;
+	// }
 	.contact-form button{
-		background: #25274d;
+
 		color: #fff;
 		font-weight: 600;
 		width: 25%;
@@ -96,3 +93,45 @@ img{width:100%;}
 	.contact-form button:focus{
 		box-shadow:none;
 	}
+	#search {
+    float: right;
+    margin-top: 9px;
+    width: 50px;
+}
+
+.search {
+    padding: 5px 0;
+    width: 230px;
+    height: 30px;
+    position: relative;
+    left: 10px;
+    float: left;
+    line-height: 22px;
+}
+
+    .search input {
+        position: absolute;
+        width: 0px;
+        float: Left;
+        margin-left: 210px;
+        -webkit-transition: all 0.7s ease-in-out;
+        -moz-transition: all 0.7s ease-in-out;
+        -o-transition: all 0.7s ease-in-out;
+        transition: all 0.7s ease-in-out;
+        height: 30px;
+        line-height: 18px;
+        padding: 0 2px 0 2px;
+        border-radius:1px;
+    }
+
+        .search:hover input, .search input:focus {
+            width: 200px;
+            margin-left: 0px;
+        }
+				.search .btn {
+				    height: 30px;
+				    position: absolute;
+				    right: 0;
+				    top: 5px;
+				    border-radius:5px;
+				}
