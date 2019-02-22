@@ -14,6 +14,10 @@ noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = 404
 postPage = "detail"
+
+[blogTags]
+results = 5
+direction = "desc"
 ==
 {% set post = blogPost.post %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -56,28 +60,13 @@ postPage = "detail"
               <p>{{post.content_html|raw}}</p>
             </div>
             <hr>
-                               <div class="news-tags">
-                                   <h5>Tags</h5>
-                                   <button type="button" class="btn btn-sm btn-primary">
-                                         Education
-                                       </button>
-                                       <button type="button" class="btn btn-sm btn-primary">
-                                         Entertainment
-                                       </button>
-                                       <button type="button" class="btn btn-sm btn-primary">
-                                         Automobile
-                                       </button>
-                                       <button type="button" class="btn btn-sm btn-primary">
-                                         Insurance
-                                       </button>
-                                       <button type="button" class="btn btn-sm btn-primary">
-                                         Energy
-                                       </button>
-                                       <button type="button" class="btn btn-sm btn-primary">
-                                         Health
-                                       </button>
-                               </div>
-                               <hr>
+            <div class="news-tags">
+              <h5>Tags</h5>
+              {% for tag in post.tags %}
+              <button type="button" class="btn btn-sm btn-primary">{{tag.name}}</button>
+              {% endfor %}
+            </div>
+            <hr>
             <div class="news-author">
               <div class="row">
                 <div class="col">
@@ -96,7 +85,11 @@ postPage = "detail"
       </div>
       <aside class="col-md-4">
         <div class="card" style="height:560px;">
-          <div class="pl-4 pt-2"><h3>Latest News</h3></div>
+          <div class="pl-4 pt-2">
+            <a href="{{'berita-terbaru'|page}}">
+              <h3>Berita Terbaru</h3>
+            </a>
+          </div>
           <!-- Tab panes -->
           <div class="tab-content sidebar-tabing" id="nav-tabContent">
             {% for post in posts.take(5) %}

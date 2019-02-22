@@ -84,7 +84,10 @@ categoryPage = 404
       </div>
       <aside class="col-md-4">
         <div class="card" style="height:560px;">
-          <div class="pl-4 pt-2"><h3>Latest News</h3></div>
+          <div class="pl-4 pt-2">
+            <a href="{{'berita-terbaru'|page}}">
+              <h3>Berita Terbaru</h3></div>
+            </a>
           <!-- Tab panes -->
           <div class="tab-content sidebar-tabing" id="nav-tabContent">
             {% for post in posts.take(5) %}
