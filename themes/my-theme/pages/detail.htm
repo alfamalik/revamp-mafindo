@@ -14,49 +14,14 @@ noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = 404
 postPage = "detail"
+
+[blogTags]
+results = 5
+direction = "desc"
 ==
 {% set post = blogPost.post %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--<?php
-function onEnd()
-{
-    // Optional - set the page title to the post title
-    if (isset($this->post))
-        $this->page->title = $this->post->title;
-}
-?>
 
-
-{% if post %}
-    <h2>{{ post.title }}</h2>
-<p class="info">
-    Posted
-    {% if post.categories.count %} in
-        {% for category in post.categories %}
-            <a>{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-        {% endfor %}
-    {% endif %}
-    on {{ post.published_at|date('M d, Y') }}
-</p>
-
-<div class="content">{{ post.content_html|raw }}</div>
-
-{% if post.featured_images.count %}
-    <div class="featured-images text-center">
-        {% for image in post.featured_images %}
-            <p>
-                <img
-                    data-src="{{ image.filename }}"
-                    src="{{ image.path }}"
-                    alt="{{ image.description }}"
-                    style="max-width: 30rem" >
-            </p>
-        {% endfor %}
-    </div>
-{% endif %}
-{% else %}
-    <h2>Post not found</h2>
-{% endif %} -->
 
 <div class="banner-sec position-relative" style="padding-top:4rem;">
   <div class="container">
@@ -94,6 +59,14 @@ function onEnd()
             <div class="news-content">
               <p>{{post.content_html|raw}}</p>
             </div>
+            <hr>
+            <div class="news-tags">
+              <h5>Tags</h5>
+              {% for tag in blogTags.tags %}
+              <button type="button" class="btn btn-sm btn-primary">{{tag.name}}</button>
+              {% endfor %}
+            </div>
+            <hr>
             <div class="news-author">
               <div class="row">
                 <div class="col">
@@ -112,7 +85,7 @@ function onEnd()
       </div>
       <aside class="col-md-4">
         <div class="card" style="height:560px;">
-          <a  href="#" class="pl-4 pt-2"><h3>Latest News</h3></a>
+          <div class="pl-4 pt-2"><h3>Latest News</h3></div>
           <!-- Tab panes -->
           <div class="tab-content sidebar-tabing" id="nav-tabContent">
             {% for post in posts.take(5) %}

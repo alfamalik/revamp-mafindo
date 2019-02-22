@@ -26,6 +26,7 @@ categoryPage = 404
     <div class="row">
       <div class="col-md-5">
         <div class="card" style="height:560px;">
+          <a href="{{posts[0].url}}">
           <div class="news-media">
             <img class="img-fluid" style="width:500px; height:350px;" src="{{posts[0].featured_images.first.getPath()}}" alt="">
           </div>
@@ -35,7 +36,7 @@ categoryPage = 404
           <div class="card-body">
             <div class="ellipsis">
               <div class="news-title">
-                <h2 class=" title-large"><a href="{{posts[0].url}}">{{posts[0].title}}</a></h2>
+                <h2 class=" title-large">{{posts[0].title}}</h2>
               </div>
             </div>
             <div class="ellipsis">
@@ -45,24 +46,27 @@ categoryPage = 404
               <strong>{{ posts[0].published_at|date('M d, Y') }}</strong>
             </div>
           </div>
+          </a>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card" style="height:270px;">
-          <img class="img-fluid" src="{{posts[1].featured_images.first.getPath()}}" alt="">
+        <div class="card"><a href="{{posts[1].url}}">
+          <img class="img-fluid" src="{{posts[1].featured_images.first.getPath()}}" alt="" style="height:173px;">
           <div class="card-img-overlay">
             <span class="badge badge-pill badge-danger">{% for i in posts[1].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
           </div>
           <div class="card-body">
             <div class="ellipsis">
               <div class="news-title">
-                <h2 class=" title-small"><a href="{{posts[1].url}}">{{posts[1].title}}</a></h2>
+                <h2 class=" title-small">{{posts[1].title}}</h2>
               </div>
+              </a>
             </div>
             <small class="text-time">{{ posts[1].published_at|date('M d, Y') }}</small>
           </div>
         </div>
-        <div class="card" style="height:270px;">
+        <div class="card">
+          <a href="{{posts[2].url}}">
           <img class="img-fluid" src="{{posts[2].featured_images.first.getPath()}}" alt="">
           <div class="card-img-overlay">
             <span class="badge badge-pill badge-danger">{% for i in posts[2].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
@@ -70,16 +74,17 @@ categoryPage = 404
           <div class="card-body">
             <div class="ellipsis">
             <div class="news-title">
-              <h2 class=" title-small"><a href="{{posts[2].url}}">{{posts[2].title}}</a></h2>
+              <h2 class=" title-small">{{posts[2].title}}</h2>
             </div>
             </div>
             <p class="card-text"><small class="text-time">{{ posts[2].published_at|date('M d, Y') }}</small></p>
           </div>
+          </a>
         </div>
       </div>
       <aside class="col-md-4">
         <div class="card" style="height:560px;">
-          <a  href="#" class="pl-4 pt-2"><h3>Latest News</h3></a>
+          <div class="pl-4 pt-2"><h3>Latest News</h3></div>
           <!-- Tab panes -->
           <div class="tab-content sidebar-tabing" id="nav-tabContent">
             {% for post in posts.take(5) %}
@@ -116,13 +121,13 @@ categoryPage = 404
           <div class="">
             <div class="col-lg-4 card">
               <div class="card" style=" height:400px;">
-                <img class="img-fluid" style="height:250px" src="{{post.featured_images.first.getPath()}}"  >
+                  <a href="{{ 'detail'|page({slug: post.slug})}}">
+                <img class="img-fluid" style="height:200px" src="{{post.featured_images.first.getPath()}}"  >
                 <div class="card-body">
                     <div class="ellipsis">
                   <div class="news-title">
-                    <a href="{{ 'detail'|page({slug: post.slug})}}">
+
                       <h2 class=" title-small">{{post.title}}</h2>
-                    </a>
                   </div>
                       </div>
                       <div class="ellipsis">
@@ -130,6 +135,7 @@ categoryPage = 404
                   </div>
                   <p class="card-text"><small class="text-time">{{ post.published_at|date('M d,Y')}}</small></p>
                 </div>
+              </a>
               </div>
             </div>
           </div>
