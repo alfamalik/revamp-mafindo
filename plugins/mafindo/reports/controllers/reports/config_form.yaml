@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Report
+
+# Model Form Field configuration
+form: $/mafindo/reports/models/report/fields.yaml
+
+# Model Class name
+modelClass: Mafindo\Reports\Models\Report
+
+# Default redirect location
+defaultRedirect: mafindo/reports/reports
+
+# Create page
+create:
+    title: Create Report
+    redirect: mafindo/reports/reports/update/:id
+    redirectClose: mafindo/reports/reports
+
+# Update page
+update:
+    title: Edit Report
+    redirect: mafindo/reports/reports
+    redirectClose: mafindo/reports/reports
+
+# Preview page
+preview:
+    title: Preview Report

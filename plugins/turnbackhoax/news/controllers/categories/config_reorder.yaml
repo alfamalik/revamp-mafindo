@@ -1,4 +1,0 @@
-title: Categories
-modelClass: Turnbackhoax\News\Models\Categories
-toolbar:
-    buttons: reorder_toolbar
