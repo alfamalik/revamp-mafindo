@@ -25,7 +25,7 @@ categoryPage = 404
   <div class="container">
     <div class="row">
       <div class="col-md-5">
-        <div class="card" style="height:560px;">
+        <div class="card" style="height:580px;">
           <a href="{{posts[0].url}}">
             <div class="news-media">
               <img class="img-fluid" style="width:500px; height:350px;" src="{{posts[0].featured_images.first.getPath()}}" alt="">
@@ -39,19 +39,20 @@ categoryPage = 404
                   <h2 class=" title-large">{{posts[0].title}}</h2>
                 </div>
               </div>
-            <div class="ellipsis">
-            <div class="news-des">{{posts[0].excerpt|raw}}</div>
-          </div>
-            <div class="time-text">
-              <strong>{{ posts[0].published_at|date('M d, Y') }}</strong>
+              <div class="ellipsis">
+                <div class="news-des">{{posts[0].excerpt|raw}}</div>
+              </div>
+              <div class="time-text">
+                <strong>{{ posts[0].published_at|date('M d, Y') }}</strong>
+              </div>
             </div>
           </a>
-          </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="card"><a href="{{posts[1].url}}">
-          <img class="img-fluid" src="{{posts[1].featured_images.first.getPath()}}" alt="" style="height:173px;">
+    <div class="col-md-3">
+      <div class="card">
+        <a href="{{posts[1].url}}">
+          <img class="img-fluid" src="{{posts[1].featured_images.first.getPath()}}" alt="" style="height:165px;">
           <div class="card-img-overlay">
             <span class="badge badge-pill badge-danger">{% for i in posts[1].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
           </div>
@@ -60,33 +61,35 @@ categoryPage = 404
               <div class="news-title">
                 <h2 class=" title-small">{{posts[1].title}}</h2>
               </div>
-              </a>
             </div>
             <small class="text-time">{{ posts[1].published_at|date('M d, Y') }}</small>
           </div>
-        </div>
-        <div class="card">
-          <a href="{{posts[2].url}}">
-          <img class="img-fluid" src="{{posts[2].featured_images.first.getPath()}}" alt="">
+        </a>
+      </div>
+      <div class="card">
+        <a href="{{posts[2].url}}">
+          <img class="img-fluid" src="{{posts[2].featured_images.first.getPath()}}" alt="" style="height:165px;">
           <div class="card-img-overlay">
             <span class="badge badge-pill badge-danger">{% for i in posts[2].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
           </div>
           <div class="card-body">
             <div class="ellipsis">
-            <div class="news-title">
-              <h2 class=" title-small">{{posts[2].title}}</h2>
-            </div>
+              <div class="news-title">
+                <h2 class=" title-small">{{posts[2].title}}</h2>
+              </div>
             </div>
             <p class="card-text"><small class="text-time">{{ posts[2].published_at|date('M d, Y') }}</small></p>
           </div>
-          </a>
-        </div>
+        </a>
+      </div>
       </div>
       <aside class="col-md-4">
-        <div class="card" style="height:560px;">
+        <div class="card" style="height:580px;">
           <div class="pl-4 pt-2">
-            <a href="{{'berita-terbaru'|page}}">
-              <h3>Berita Terbaru</h3></div>
+            <a href="{{'berita-terbaru'|page}}" >
+              <div class="title">
+                <h3>Berita Terbaru</h3></div>
+              </div>
             </a>
           <!-- Tab panes -->
           <div class="tab-content sidebar-tabing" id="nav-tabContent">
@@ -97,10 +100,10 @@ categoryPage = 404
               </a>
               <div class="media-body">
                 <div class="ellipsis">
-                <div class="news-title">
-                  <h2 class="title-small"><a href="{{post.url}}">{{post.title}}</a></h2>
-                </div>
+                  <div class="news-title">
+                    <h2 class="title-small"><a href="{{post.url}}">{{post.title}}</a></h2>
                   </div>
+                </div>
                 <div class="news-auther">
                   <span class="time">{{ post.published_at|date('M d, Y') }}</span>
                 </div>
@@ -124,21 +127,20 @@ categoryPage = 404
           <div class="">
             <div class="col-lg-4 card">
               <div class="card" style=" height:400px;">
-                  <a href="{{ 'detail'|page({slug: post.slug})}}">
-                <img class="img-fluid" style="height:200px" src="{{post.featured_images.first.getPath()}}"  >
-                <div class="card-body">
+                <a href="{{ 'detail'|page({slug: post.slug})}}">
+                  <img class="img-fluid" style="height:200px" src="{{post.featured_images.first.getPath()}}"  >
+                  <div class="card-body">
                     <div class="ellipsis">
-                  <div class="news-title">
-
-                      <h2 class=" title-small">{{post.title}}</h2>
-                  </div>
+                      <div class="news-title">
+                        <h2 class=" title-small">{{post.title}}</h2>
                       </div>
-                      <div class="ellipsis">
-                  <p class="card-text">{{ post.excerpt}}</p>
+                    </div>
+                    <div class="ellipsis">
+                      <p class="card-text">{{ post.excerpt}}</p>
+                    </div>
+                    <p class="card-text"><small class="text-time">{{ post.published_at|date('M d,Y')}}</small></p>
                   </div>
-                  <p class="card-text"><small class="text-time">{{ post.published_at|date('M d,Y')}}</small></p>
-                </div>
-              </a>
+                </a>
               </div>
             </div>
           </div>

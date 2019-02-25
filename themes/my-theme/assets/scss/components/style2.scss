@@ -17,9 +17,28 @@ a .title-small{
 	color: blue;
 }
 }
-a .news-des{
+a .title{
 &:hover {
 	color: blue;
+}
+}
+.title-small{
+	a {
+		color: blue;
+		&:hover {
+			color: blue;
+}
+}
+}
+
+.futer{
+	a {
+		color: blue;
+
+&:hover {
+	color: blue;
+	text-decoration: underline;
+}
 }
 }
 .btn-primary {background-color: #003F87;} /* Blue */
@@ -101,7 +120,6 @@ img{width:100%;}
 
 		color: #fff;
 		font-weight: 600;
-		width: 25%;
 	}
 	.contact-form button:focus{
 		box-shadow:none;
