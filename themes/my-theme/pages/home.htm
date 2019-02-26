@@ -36,14 +36,14 @@ categoryPage = 404
             <div class="card-body">
               <div class="ellipsis">
                 <div class="news-title">
-                  <h2 class=" title-large">{{posts[0].title}}</h2>
+                  <h2>{{posts[0].title}}</h2>
                 </div>
               </div>
               <div class="ellipsis">
                 <div class="news-des">{{posts[0].excerpt|raw}}</div>
               </div>
               <div class="time-text">
-                <strong>{{ posts[0].published_at|date('M d, Y') }}</strong>
+                <span class="time">{{ posts[0].published_at|date('M d, Y') }}</span>
               </div>
             </div>
           </a>
@@ -78,7 +78,7 @@ categoryPage = 404
                 <h2 class=" title-small">{{posts[2].title}}</h2>
               </div>
             </div>
-            <p class="card-text"><small class="text-time">{{ posts[2].published_at|date('M d, Y') }}</small></p>
+            <small class="text-time">{{ posts[2].published_at|date('M d, Y') }}</small>
           </div>
         </a>
       </div>
@@ -105,7 +105,7 @@ categoryPage = 404
                   </div>
                 </div>
                 <div class="news-auther">
-                  <span class="time">{{ post.published_at|date('M d, Y') }}</span>
+                  <span class="time"><small>{{ post.published_at|date('M d, Y') }}</small></span>
                 </div>
               </div>
             </div>

@@ -242,3 +242,12 @@ img{width:100%;}
 				.overlay button:hover {
 				  background: #bbb;
 				}
+				.sidenav {
+  height: 510px;
+  width: 370px;
+  position: sticky;
+  z-index: 1;
+  top: 6rem;
+  left:36rem;
+  overflow-x: hidden;
+}
