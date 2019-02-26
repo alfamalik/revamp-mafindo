@@ -1,0 +1,41 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    name:
+      label: name
+      type: text
+    email:
+      label: email
+      type: text
+      span: right
+    title:
+      label: Judul Laporan
+      type: text
+      span: left
+    text:
+      label: Text Hoax
+      size: ''
+      span: auto
+      type: richeditor
+    message:
+      label: Pesan
+      size: ''
+      span: auto
+      type: richeditor
+    evidences:
+      label: upload gambar
+      type: fileupload
+      imageHeight: '100'
+      imageWidth: '100'
+      mode: image
+      useCaption: true
+      thumbOptions:
+          mode: crop
+          extension: auto
+      span: left
+      cssClass: ''

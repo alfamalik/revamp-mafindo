@@ -49,19 +49,20 @@ categoryPage = 404
           </a>
         </div>
       </div>
-    <div class="col-md-3">
-      <div class="card">
-        <a href="{{posts[1].url}}">
-          <img class="img-fluid" src="{{posts[1].featured_images.first.getPath()}}" alt="" style="height:165px;">
-          <div class="card-img-overlay">
-            <span class="badge badge-pill badge-danger">{% for i in posts[1].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
-          </div>
-          <div class="card-body">
-            <div class="ellipsis">
-              <div class="news-title">
-                <h2 class=" title-small">{{posts[1].title}}</h2>
-              </div>
+      <div class="col-md-3">
+        <div class="card">
+          <a href="{{posts[1].url}}">
+            <img class="img-fluid" src="{{posts[1].featured_images.first.getPath()}}" alt="" style="height:165px;">
+            <div class="card-img-overlay">
+              <span class="badge badge-pill badge-danger">{% for i in posts[1].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
             </div>
+            <div class="card-body">
+              <div class="ellipsis">
+                <div class="news-title">
+                  <h2 class=" title-small">{{posts[1].title}}</h2>
+                </div>
+              </div>
+            </a>
             <small class="text-time">{{ posts[1].published_at|date('M d, Y') }}</small>
           </div>
         </a>
