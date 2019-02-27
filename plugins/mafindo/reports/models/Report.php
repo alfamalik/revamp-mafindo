@@ -33,7 +33,5 @@ class Report extends Model
     public $morphOne = [];
     public $morphMany = [];
     public $attachMany = ['evidences' => ['System\Models\File']];
-    public $attachOne = [
-      'postImages' => 'System\Models\File'
-    ];
+    public $attachOne = [];
 }

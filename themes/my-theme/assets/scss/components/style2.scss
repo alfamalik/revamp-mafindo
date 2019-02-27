@@ -7,7 +7,7 @@
 		}
 	}
 }
-a .title-large{
+a .news-title{
 &:hover {
 	color: blue;
 }
@@ -35,14 +35,28 @@ a .title{
 	a {
 		color: blue;
 
-&:hover {
-	color: blue;
-	text-decoration: underline;
+	&:hover {
+		color: blue;
+		text-decoration: underline;
 }
 }
 }
-.btn-primary {background-color: #003F87;} /* Blue */
+.btn-primary {
+	border-color: white;
+	background-color: #003F87;
+}
+
 .btn-primary{
+	&:hover {
+		background: #003366;
+		border-color: white;
+	}
+}
+.upld .btn {
+	color: white;
+	background-color: #003F87;
+}
+.upld .btn{
 	&:hover {
 		background: #003366;
 	}
@@ -99,7 +113,7 @@ header{ width:100%}
 .action-box{ width:100%; text-align:center;}
 .action-box h2{color:#fff; font-size:20px;}
 .ellipsis{width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
-.ellipsis .news-des{width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;}
+.ellipsis .news-des{width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;}
 .ellipsis .card-text {width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;}
 .ellipsis .news-title .title-large{width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
 img{width:100%;}
@@ -242,3 +256,26 @@ img{width:100%;}
 				.overlay button:hover {
 				  background: #bbb;
 				}
+				.sidenav {
+  height: 510px;
+  width: 370px;
+  position: sticky;
+  z-index: 1;
+  top: 6rem;
+  left:36rem;
+  overflow-x: hidden;
+}
+.btn-outline-custom{
+	color: #003366;
+	border-color: #003366;
+	background-color: transparent;
+}
+.btn-outline-custom{
+	&:hover {
+		background: #003366;
+		color: yellow;
+	}
+}
+.form-inline .form-control{
+	border: 1px solid #003366;
+}

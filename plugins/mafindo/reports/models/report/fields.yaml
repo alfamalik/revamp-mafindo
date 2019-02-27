@@ -23,7 +23,7 @@ fields:
       span: auto
       type: richeditor
     message:
-      label: Pesan
+      label: Penjelasan
       size: ''
       span: auto
       type: richeditor
