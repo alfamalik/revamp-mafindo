@@ -6,3 +6,9 @@ columns:
     id:
         label: ID
         searchable: true
+    name:
+      label: Name
+    email:
+      label: Email
+    title:
+      label: Judul Laporan

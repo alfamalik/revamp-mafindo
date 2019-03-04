@@ -50,13 +50,13 @@ categoryPage = 404
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card">
+        <div class="card" style="height:280px;">
           <a href="{{posts[1].url}}">
             <img class="img-fluid" src="{{posts[1].featured_images.first.getPath()}}" alt="" style="height:165px;">
             <div class="card-img-overlay">
               <span class="badge badge-pill badge-danger">{% for i in posts[1].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
             </div>
-            <div class="card-body">
+            <div class="card-body"  style="height:280px;">
               <div class="ellipsis">
                 <div class="news-title">
                   <h2 class=" title-small">{{posts[1].title}}</h2>
@@ -67,13 +67,13 @@ categoryPage = 404
           </div>
         </a>
       </div>
-      <div class="card">
+      <div class="card"  style="height:280px;">
         <a href="{{posts[2].url}}">
           <img class="img-fluid" src="{{posts[2].featured_images.first.getPath()}}" alt="" style="height:165px;">
           <div class="card-img-overlay">
             <span class="badge badge-pill badge-danger">{% for i in posts[2].categories %} {{ i.name }} {{loop.last?'':','}} {% endfor %}</span>
           </div>
-          <div class="card-body">
+          <div class="card-body"  style="height:113px;">
             <div class="ellipsis">
               <div class="news-title">
                 <h2 class=" title-small">{{posts[2].title}}</h2>
@@ -97,9 +97,9 @@ categoryPage = 404
             {% for post in posts.take(5) %}
             <div class="media px-2">
               <a href="{{post.url}}">
-                <img class="d-flex mr-3 rounded-circle" src="{{post.featured_images.first.getPath()}}"  style="height:80px; width:80px;">
+                <img class="d-flex mr-3 rounded-circle border border-dark" src="{{post.featured_images.first.getPath()}}"  style="height:80px; width:80px;">
               </a>
-              <div class="media-body">
+              <div class="media-body" style="overflow-x: hidden;">
                 <div class="ellipsis">
                   <div class="news-title">
                     <h2 class="title-small"><a href="{{post.url}}">{{post.title}}</a></h2>

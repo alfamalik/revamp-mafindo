@@ -32,9 +32,10 @@ code = "main-menu"
         </li>
         {% endfor %}
       </ul>
-      <form action="{{'search'|page}}" method="get" class="search">
-        <input name="search" type="text" name="q" class="form-control input-sm" maxlength="64" placeholder="Search" autocomplete="off">
-        <button type="submit" class="btn btn-primary btn-sm">Search</button>
+      <form action="{{ 'search'|page }}" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" name="q" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">Search</button>
+
       </form>
     </div>
   </div>

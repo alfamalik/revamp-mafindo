@@ -14,13 +14,34 @@ deferredBinding = "1"
 ==
 <?php
 use Mafindo\Reports\Models\Report;
+
+
 function onInit()
 {
     $this->postImages->bindModel('evidences', new Report);
 }
 
+function onSend(){
+
+
+}
+
 function onTest()
 {
+
+    $vars = ['name' => Input::get('name'),
+    'email' => Input::get('email'),
+    'title' => Input::get('title'),
+    'text' => Input::get('text'),
+    'message' => Input::get('message'),
+    'postImages' => Input::get('postImages')
+             ];
+    Mail::send('mafindo.report::mail.message', $vars, function($message) {
+
+      $message->to('admin@domain.tld', 'Admin Person');
+      $message->subject('New message');
+    });
+
   $report = new Report;
 
   $report->name = post('name');
@@ -31,6 +52,8 @@ function onTest()
   $report->save(null,post('_session_key'));
 
   \Flash::success('berhasil disimpan');}
+
+
 ?>
 ==
 <div class="banner-sec position-relative" style="padding-top:4rem;">
@@ -52,7 +75,9 @@ function onTest()
               <hr>
             </div>
             <div class="col-md-10">
-              {{ form_open({ request: 'onTest', class: 'contact-form' }) }}
+              {{ form_open({ request: 'onTest', class: 'contact-<form class="" action="index.html" method="post">
+
+              </form>' }) }}
                 <div class="form-group">
                   <label class="control-label col-sm-6" for="nama">Nama</label>
                   <div class="col-sm-10">
@@ -83,11 +108,13 @@ function onTest()
                     <textarea class="form-control" name="message" rows="5" id="pesan"></textarea>
                   </div>
                 </div>
+                <div class=" upld col-md-12">
                 {% if postImages.isMulti %}
                   {% partial postImages ~ '::image-multi' %}
                 {% else %}
                   {% partial postImages ~ '::image-single' %}
                 {% endif %}
+                </div>
                 <div class=" col-md-12">
                   <button type="submit" class="btn btn-primary">Kirim</button>
                 </div>
@@ -100,8 +127,7 @@ function onTest()
             </div>
           </div>
         </div>
-        <div class="col-2">
-        </div>
+        <div class="col-2"></div>
       </div>
     </div>
   </div>
