@@ -67,8 +67,8 @@ h1,h2,h3,h4,h5{
 }
 
 
-section{padding: 30px 0;  width: 100%}
-.card{ float :left; width:100%}
+section{padding: 30px 0;  width: 100}
+.card{ float :left; width: 100%;}
 
 .navbar {border: medium none; margin-bottom: 0px; width: 100%;  border-radius: 0}
 .title-large {font-size: 20px; margin: 10px 0 5px; line-height: 27px; color: #141517;}
@@ -115,7 +115,8 @@ header{ width:100%}
 .ellipsis{width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
 .ellipsis .news-des{width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;}
 .ellipsis .card-text {width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;}
-.ellipsis .news-title .title-large{width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
+.ellipsis .news-title {width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
+.ellipsis .news-title .tilte {width: 100%; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
 img{width:100%;}
 .contact{
 		padding: 4%;
@@ -256,12 +257,20 @@ img{width:100%;}
 				.overlay button:hover {
 				  background: #bbb;
 				}
+<<<<<<< HEAD
 				.sidenav {
   height: 510px;
   position: sticky;
   z-index: 1;
   top: 6rem;
   overflow-x: hidden;
+=======
+.sidenav {
+	height: 510px;
+	position: sticky;
+	top: 6rem;
+	overflow-x: hidden;
+>>>>>>> 50c7b081502652c63750fb34b2a46391450281e6
 }
 
 .btn-outline-custom{
