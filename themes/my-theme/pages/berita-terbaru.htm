@@ -35,14 +35,20 @@ postPage = "detail"
             <div class="card-body">
               <div class="row">
                 <div class="col-md-4">
-                  <img src="{{post.featured_images.first.getPath()}} ">
+                  <img src="{{post.featured_images.first.getPath()}} " style="height: 160px;">
                 </div>
                 <div class="col-md-8">
-                  <div class="news-title">
-                    <a href="{{'detail'|page({slug : post.slug})}}"><h5>{{post.title}}</h5></a>
+                  <div class="ellipsis">
+                    <div class="news-title">
+                      <div class="title">
+                      <a href="{{'detail'|page({slug : post.slug})}}"><h5>{{post.title}}</h5></a>
+                    </div>
                   </div>
-                  <div class="news-content">
-                    <p>{{post.excerpt}}</p>
+                </div>
+                  <div class="ellipsis">
+                    <div class="news-content">
+                      <p>{{post.excerpt}}</p>
+                    </div>
                   </div>
                   <div class="news-buttons">
                     <a href="{{'detail'|page({slug : post.slug})}}">

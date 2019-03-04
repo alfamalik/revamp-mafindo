@@ -33,7 +33,7 @@ code = "main-menu"
         {% endfor %}
       </ul>
       <form action="{{'search'|page}}" method="get" class="search">
-        <input name="search" type="text" class="form-control input-sm" maxlength="64" placeholder="Search" autocomplete="off">
+        <input name="search" type="text" name="q" class="form-control input-sm" maxlength="64" placeholder="Search" autocomplete="off">
         <button type="submit" class="btn btn-primary btn-sm">Search</button>
       </form>
     </div>
