@@ -108,12 +108,12 @@ function onTest()
                     <textarea class="form-control" name="message" rows="5" id="pesan"></textarea>
                   </div>
                 </div>
-                <div class=" upld col-md-12">
-                {% if postImages.isMulti %}
-                  {% partial postImages ~ '::image-multi' %}
-                {% else %}
-                  {% partial postImages ~ '::image-single' %}
-                {% endif %}
+                <div class=" upld col-md-12" >
+                  {% if postImages.isMulti %}
+                    {% partial postImages ~ '::image-multi' %}
+                  {% else %}
+                    {% partial postImages ~ '::image-single' %}
+                  {% endif %}
                 </div>
                 <div class=" col-md-12">
                   <button type="submit" class="btn btn-primary">Kirim</button>
