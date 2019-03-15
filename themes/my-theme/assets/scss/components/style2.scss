@@ -73,7 +73,7 @@ section{padding: 30px 0;  width: 100}
 		box-shadow: 0 19px 32px rgba(0,0,0,0.30);
 	}
 }
-.navbar {border: medium none; margin-bottom: 0px; width: 100%;  border-radius: 0}
+.navbar {border: medium none; margin-bottom: 0px; width: 100%;  }
 .title-large {font-size: 20px; margin: 10px 0 5px; line-height: 27px; color: #141517;}
 .title-small { color: #141517; font-size: 16px; font-weight: 400; line-height: 23px; margin: 6px 0 0;}
 .title-x-small {font-size: 18px; margin: 0px;}
@@ -152,114 +152,99 @@ img{
     float: left;
     line-height: 22px;
 }
-
-    .search input {
-        position: absolute;
-        width: 0px;
-        float: Left;
-        margin-left: 210px;
-        -webkit-transition: all 0.7s ease-in-out;
-        -moz-transition: all 0.7s ease-in-out;
-        -o-transition: all 0.7s ease-in-out;
-        transition: all 0.7s ease-in-out;
-        height: 30px;
-        line-height: 18px;
-        padding: 0 2px 0 2px;
-        border-radius:1px;
-    }
-
-        .search:hover input, .search input:focus {
-            width: 200px;
-            margin-left: 0px;
-        }
-				.search .btn {
-				    height: 30px;
-				    position: absolute;
-				    right: 0;
-				    top: 5px;
-				    border-radius:5px;
-				}
-				* {
-				  box-sizing: border-box;
-				}
-
-				.openBtn {
-				  background: #f1f1f1;
-				  border: none;
-				  padding: 10px 15px;
-				  font-size: 20px;
-				  cursor: pointer;
-				}
-
-				.openBtn:hover {
-				  background: #bbb;
-				}
-
-				.overlay {
-				  height: 100%;
-				  width: 100%;
-				  display: none;
-				  position: fixed;
-				  z-index: 1;
-				  top: 0;
-				  left: 0;
-				  background-color: rgb(0,0,0);
-				  background-color: rgba(0,0,0, 0.9);
-				}
-
-				.overlay-content {
-				  position: relative;
-				  top: 46%;
-				  width: 80%;
-				  text-align: center;
-				  margin-top: 30px;
-				  margin: auto;
-				}
-
-				.overlay .closebtn {
-				  position: absolute;
-				  top: 20px;
-				  right: 45px;
-				  font-size: 60px;
-				  cursor: pointer;
-				  color: white;
-				}
-
-				.overlay .closebtn:hover {
-				  color: #ccc;
-				}
-
-				.overlay input[type=text] {
-				  padding: 15px;
-				  font-size: 17px;
-				  border: none;
-				  float: left;
-				  width: 80%;
-				  background: white;
-				}
-
-				.overlay input[type=text]:hover {
-				  background: #f1f1f1;
-				}
-
-				.overlay button {
-				  float: left;
-				  width: 20%;
-				  padding: 15px;
-				  background: #ddd;
-				  font-size: 17px;
-				  border: none;
-				  cursor: pointer;
-				}
-
-				.overlay button:hover {
-				  background: #bbb;
-				}
+.search input {
+position: absolute;
+width: 0px;
+float: Left;
+margin-left: 210px;
+-webkit-transition: all 0.7s ease-in-out;
+-moz-transition: all 0.7s ease-in-out;
+-o-transition: all 0.7s ease-in-out;
+transition: all 0.7s ease-in-out;
+height: 30px;
+line-height: 18px;
+padding: 0 2px 0 2px;
+}
+.search:hover input, .search input:focus {
+    width: 200px;
+    margin-left: 0px;
+}
+.search .btn {
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+* {
+  box-sizing: border-box;
+}
+.openBtn {
+  background: #f1f1f1;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.openBtn:hover {
+  background: #bbb;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+}
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+.overlay input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: white;
+}
+.overlay input[type=text]:hover {
+  background: #f1f1f1;
+}
+.overlay button {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.overlay button:hover {
+  background: #bbb;
+}
 .sidenav {
 	height: 510px;
 	position: sticky;
 	top: 6rem;
-
 }
 .btn-outline-custom{
 	color: #003366;
