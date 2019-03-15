@@ -25,7 +25,7 @@ categoryPage = 404
   <div class="container">
     <div class="row">
       <div class="col-md-5">
-        <div class="card" style="height:580px;">
+        <div class="card hover" style="height:580px;">
           <a href="{{posts[0].url}}">
             <div class="news-media">
               <img class="img-fluid" style="width:500px; height:350px;" src="{{posts[0].featured_images.first.getPath()}}" alt="">
@@ -50,7 +50,7 @@ categoryPage = 404
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card" style="height:280px;">
+        <div class="card hover" style="height:280px;">
           <a href="{{posts[1].url}}">
             <img class="img-fluid" src="{{posts[1].featured_images.first.getPath()}}" alt="" style="height:165px;">
             <div class="card-img-overlay">
@@ -67,7 +67,7 @@ categoryPage = 404
           </div>
         </a>
       </div>
-      <div class="card"  style="height:280px;">
+      <div class="card hover"  style="height:280px;">
         <a href="{{posts[2].url}}">
           <img class="img-fluid" src="{{posts[2].featured_images.first.getPath()}}" alt="" style="height:165px;">
           <div class="card-img-overlay">
@@ -85,7 +85,7 @@ categoryPage = 404
       </div>
       </div>
       <aside class="col-md-4">
-        <div class="card" style="height:580px;">
+        <div class="card hover" style="height:580px;">
           <div class="pl-4 pt-2">
             <a href="{{'berita-terbaru'|page}}" >
               <div class="title">
@@ -127,7 +127,7 @@ categoryPage = 404
           {% for post in category.posts.take(3) %}
           <div class="">
             <div class="col-lg-4 card">
-              <div class="card" style=" height:400px;">
+              <div class="" style=" height:400px;">
                 <a href="{{ 'detail'|page({slug: post.slug})}}">
                   <img class="img-fluid" style="height:200px" src="{{post.featured_images.first.getPath()}}"  >
                   <div class="card-body">
@@ -139,7 +139,7 @@ categoryPage = 404
                     <div class="ellipsis">
                       <p class="card-text">{{ post.excerpt}}</p>
                     </div>
-                    <p class="card-text"><small class="text-time">{{ post.published_at|date('M d,Y')}}</small></p>
+                    <p class="card-text"><small class="time">{{ post.published_at|date('M d,Y')}}</small></p>
                   </div>
                 </a>
               </div>
