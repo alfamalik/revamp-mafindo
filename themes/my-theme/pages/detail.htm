@@ -33,7 +33,7 @@ direction = "desc"
             <div class="news-title">
               <h2>{{ post.title }}</h2>
             </div>
-          <div class="news-cats">
+            <div class="news-cats">
               <ul class="list-unstyled list-inline mb-1">
                 <li class="list-inline-item">
                   <a href="#"><small></small>{{ post.published_at|date('M d, Y')}}</a>
@@ -72,16 +72,16 @@ direction = "desc"
           </div>
         </div>
       </div>
-
       <aside class="col-md-4">
         <div class="sidenav">
         <div class="card" style="height:490px;">
           <div class="pl-4 pt-2">
             <a href="{{'berita-terbaru'|page}}" >
               <div class="title">
-                <h3>Berita Terbaru</h3></div>
+                <h3>Berita Terbaru</h3>
               </div>
             </a>
+          </div>
           <!-- Tab panes -->
           <div class="tab-content sidebar-tabing" id="nav-tabContent">
             {% for post in posts.take(4) %}
@@ -103,8 +103,7 @@ direction = "desc"
             {% endfor %}
           </div>
         </div>
-      </div>
       </aside>
     </div>
-    </div>
-	</div>
+  </div>
+</div>

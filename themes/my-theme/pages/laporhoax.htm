@@ -21,27 +21,8 @@ function onInit()
     $this->postImages->bindModel('evidences', new Report);
 }
 
-function onSend(){
-
-
-}
-
-function onTest()
+function onSave()
 {
-
-    $vars = ['name' => Input::get('name'),
-    'email' => Input::get('email'),
-    'title' => Input::get('title'),
-    'text' => Input::get('text'),
-    'message' => Input::get('message'),
-    'postImages' => Input::get('postImages')
-             ];
-    Mail::send('mafindo.report::mail.message', $vars, function($message) {
-
-      $message->to('admin@domain.tld', 'Admin Person');
-      $message->subject('New message');
-    });
-
   $report = new Report;
 
   $report->name = post('name');
@@ -50,6 +31,7 @@ function onTest()
   $report->text = post('text');
   $report->message = post('message');
   $report->save(null,post('_session_key'));
+
 
   \Flash::success('berhasil disimpan');}
 
@@ -75,8 +57,7 @@ function onTest()
               <hr>
             </div>
             <div class="col-md-10">
-              {{ form_open({ request: 'onTest', class: 'contact-<form class="" action="index.html" method="post">
-              </form>' }) }}
+              {{ form_open({ request: 'onSave', class: 'contact-form' }) }}
                 <div class="form-group">
                   <label class="control-label col-sm-6" for="nama">Nama</label>
                   <div class="col-sm-10">
@@ -95,7 +76,7 @@ function onTest()
                     <input type="text" class="form-control" id="judul" placeholder="Judul Laporan" name="title">
                   </div>
                 </div>
-                <div class="form-group">
+                  <div class="form-group">
                   <label class="control-label col-sm-6" for="teks">Teks Hoaks</label>
                   <div class="col-sm-10">
                     <textarea class="form-control" name='text' rows="5" id="teks"></textarea>
@@ -120,7 +101,7 @@ function onTest()
                 <div class="col-12">
                   <div class="futer">
                   <p>Semua laporan yang masuk bisa [ <a href="https://rlxc.plan.io/projects/hoax-clearing-center/issues">dipantau disini</a> ]</p>
-                </div>
+                  </div>
                 </div>
             </div>
           </div>
@@ -130,3 +111,12 @@ function onTest()
     </div>
   </div>
 </div>
+
+{% put scripts %}
+<script>
+$('.img1 img').attr('src');
+$(".upload-button").on("click", function () {
+    var val = $(this).closest("div.responsiv-uploader-fileupload").find("input[name='_uploader[evidences]']").attr('src');
+});
+</script>
+{% endput %}
