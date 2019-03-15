@@ -33,11 +33,7 @@ direction = "desc"
             <div class="news-title">
               <h2>{{ post.title }}</h2>
             </div>
-<<<<<<< HEAD
             <div class="news-cats">
-=======
-          <div class="news-cats">
->>>>>>> 50c7b081502652c63750fb34b2a46391450281e6
               <ul class="list-unstyled list-inline mb-1">
                 <li class="list-inline-item">
                   <a href="#"><small></small>{{ post.published_at|date('M d, Y')}}</a>
@@ -76,41 +72,16 @@ direction = "desc"
           </div>
         </div>
       </div>
-
       <aside class="col-md-4">
         <div class="sidenav">
-<<<<<<< HEAD
-          <div class="card" style="height:490px;">
-            <div class="pl-4 pt-2">
-              <a href="{{'berita-terbaru'|page}}" >
-                <div class="title">
-                  <h3>Berita Terbaru</h3></div>
-                </div>
-              </a>
-            <!-- Tab panes -->
-            <div class="tab-content sidebar-tabing" id="nav-tabContent">
-              {% for post in posts.take(4) %}
-              <div class="media px-2">
-                <a href="{{post.url}}">
-                  <img class="d-flex mr-3 rounded-circle border border-dark" src="{{post.featured_images.first.getPath()}}"  style="height:80px; width:80px;">
-                </a>
-                <div class="media-body"  style= "overflow-x: hidden;">
-                  <div class="ellipsis">
-                    <div class="news-title">
-                      <h2 class="title-small"><a href="{{post.url}}">{{post.title}}</a></h2>
-                    </div>
-                  </div>
-                  <div class="news-auther">
-                    <span class="time"><small>{{ post.published_at|date('M d, Y') }}</small></span>
-                  </div>
-=======
         <div class="card" style="height:490px;">
           <div class="pl-4 pt-2">
             <a href="{{'berita-terbaru'|page}}" >
               <div class="title">
-                <h3>Berita Terbaru</h3></div>
+                <h3>Berita Terbaru</h3>
               </div>
             </a>
+          </div>
           <!-- Tab panes -->
           <div class="tab-content sidebar-tabing" id="nav-tabContent">
             {% for post in posts.take(4) %}
@@ -126,22 +97,13 @@ direction = "desc"
                 </div>
                 <div class="news-auther">
                   <span class="time"><small>{{ post.published_at|date('M d, Y') }}</small></span>
->>>>>>> 50c7b081502652c63750fb34b2a46391450281e6
                 </div>
               </div>
             </div>
             {% endfor %}
           </div>
         </div>
-<<<<<<< HEAD
       </aside>
     </div>
   </div>
 </div>
-=======
-      </div>
-      </aside>
-    </div>
-    </div>
-	</div>
->>>>>>> 50c7b081502652c63750fb34b2a46391450281e6
