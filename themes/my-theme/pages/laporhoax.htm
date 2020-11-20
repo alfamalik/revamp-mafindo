@@ -3,39 +3,23 @@ url = "/laporhoax"
 layout = "default"
 is_hidden = 0
 
-[Responsiv\Uploader\Components\ImageUploader postImages]
+[mafindoReports]
+
+[Responsiv\Uploader\Components\ImageUploader imageUploader]
+deferredBinding = "1"
 placeholderText = "Click or drag images to upload"
 maxSize = 5
 fileTypes = ".gif,.jpg,.jpeg,.png"
 imageWidth = 100
 imageHeight = 100
 imageMode = "crop"
-deferredBinding = "1"
 ==
 <?php
 use Mafindo\Reports\Models\Report;
-
-
 function onInit()
 {
-    $this->postImages->bindModel('evidences', new Report);
+  $this->imageUploader->bindModel('evidences', new Report);
 }
-
-function onSave()
-{
-  $report = new Report;
-
-  $report->name = post('name');
-  $report->email = post('email');
-  $report->title = post('title');
-  $report->text = post('text');
-  $report->message = post('message');
-  $report->save(null,post('_session_key'));
-
-
-  \Flash::success('berhasil disimpan');}
-
-
 ?>
 ==
 <div class="banner-sec position-relative" style="padding-top:4rem;">
@@ -56,43 +40,48 @@ function onSave()
               <p>Laporkan : “hidung Donald ada tiga” = salah secara fakta<br>Bukan hoax : “muka Fulan jelek sekali” = opini / pendapat</p>
               <hr>
             </div>
-            <div class="col-md-10">
-              {{ form_open({ request: 'onSave', class: 'contact-form' }) }}
+            {{ form_ajax('onSave') }}
+              <div class="col-md-10">
                 <div class="form-group">
                   <label class="control-label col-sm-6" for="nama">Nama</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control" id="nama" placeholder="Nama" name="name">
+                    <!-- <span data-validate-for="name">Isi nama</span> -->
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-6" for="email">Email</label>
                   <div class="col-sm-10">
                     <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                    <!-- <span data-validate-for="email">Isi email</span> -->
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-6" for="judul">Judul Laporan</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control" id="judul" placeholder="Judul Laporan" name="title">
+                    <!-- <span data-validate-for="name">Isi judul laporan</span> -->
                   </div>
                 </div>
                   <div class="form-group">
                   <label class="control-label col-sm-6" for="teks">Teks Hoaks</label>
                   <div class="col-sm-10">
                     <textarea class="form-control" name='text' rows="5" id="teks"></textarea>
+                    <!-- <span data-validate-for="name">Isi</span> -->
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-6" for="pesan">Pesan</label>
                   <div class="col-sm-10">
                     <textarea class="form-control" name="message" rows="5" id="pesan"></textarea>
+                    <!-- <span data-validate-for="name">Isi</span> -->
                   </div>
                 </div>
                 <div class=" upld col-md-12" >
-                  {% if postImages.isMulti %}
-                    {% partial postImages ~ '::image-multi' %}
+                  {% if imageUploader.isMulti %}
+                    {% partial imageUploader ~ '::image-multi' %}
                   {% else %}
-                    {% partial postImages ~ '::image-single' %}
+                    {% partial imageUploader ~ '::image-single' %}
                   {% endif %}
                 </div>
                 <div class=" col-md-12">
@@ -103,6 +92,7 @@ function onSave()
                   <p>Semua laporan yang masuk bisa [ <a href="https://rlxc.plan.io/projects/hoax-clearing-center/issues">dipantau disini</a> ]</p>
                   </div>
                 </div>
+                {{ form_close() }}
             </div>
           </div>
         </div>
@@ -111,12 +101,3 @@ function onSave()
     </div>
   </div>
 </div>
-
-{% put scripts %}
-<script>
-$('.img1 img').attr('src');
-$(".upload-button").on("click", function () {
-    var val = $(this).closest("div.responsiv-uploader-fileupload").find("input[name='_uploader[evidences]']").attr('src');
-});
-</script>
-{% endput %}

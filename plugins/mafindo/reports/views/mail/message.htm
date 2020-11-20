@@ -1,0 +1,14 @@
+<p>you got a new message from {{name}} at {{email}}</p>
+<br>
+<p><strong>Judul Laporan {{title}}</strong></p>
+<br>
+<p><strong>Text Hoax</strong></p>
+<p>{{text}}</p>
+<strong>Penjelasan</strong>
+<p>{{mail}}</p>
+<p><strong>Gambar</strong></p>
+<p>
+{% for picture in pictures %}
+    <img src="{{ picture.getPath() }}">
+{% endfor %}
+</p>

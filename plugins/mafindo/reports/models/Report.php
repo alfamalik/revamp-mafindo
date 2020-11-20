@@ -33,22 +33,24 @@ class Report extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachMany = ['evidences' => ['System\Models\File']];
+    public $attachMany = ['evidences' => 'System\Models\File'];
     public $attachOne = [];
 
     public function afterCreate()
     {
-      $vars = ['name' => $this->name,
+      /*$vars = ['name' => $this->name,
       'email' => $this->email,
       'title' => $this->title,
       'text' => $this->text,
       'mail' => $this->message,
-      'picture' => 'https://www.imageholders.com/wp-content/themes/timber/img/device-integration/products.svg',
+      'pictures' => $this->evidences,
+
                ];
-      Mail::send('mafindo.report::mail.message', $vars, function($msg) {
+               dd($vars);
+      Mail::send('mafindo.reports::mail.message', $vars, function($msg) {
 
         $msg->to('admin@domain.tld', 'Admin Person');
         $msg->subject('New message');
-      });
+      });*/
     }
 }
